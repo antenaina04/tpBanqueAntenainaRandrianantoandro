@@ -9,6 +9,7 @@ import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 import java.util.List;
 import mg.itu.tpbanqueantenainarandrianantoandro.entities.CompteBancaire;
 
@@ -44,4 +45,9 @@ public class GestionnaireCompte {
         return query.getResultList();
     }
 
+    public int nbComptes() {
+        TypedQuery<Long> query = em.createNamedQuery("CompteBancaire.getCount", Long.class);
+        Long nb = query.getSingleResult();
+        return nb.intValue();
+    }
 }
