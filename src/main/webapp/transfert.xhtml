@@ -32,10 +32,13 @@
                                      required="true"
                                      converterMessage="Le montant est un nombre entier"/>
                         <h:message for="montant"/>
+
                     </h:panelGrid>
                     <h:commandButton id="update" value="Valider" action="#{transfert.update()}"/>
                 </h:form>
                 <h:messages/>
+                <h:message for="source-destination-null"/>
+                <h:message for="source-insuffisant"/>
             </ui:define>
 
         </ui:composition>
